@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const genres = require('./routes/genres.route');
 const customers = require('./routes/customers.route');
 const clinicas = require('./routes/clinicas.route');
+const doctores = require('./routes/doctores.route');
 const express = require('express');
 //const ngrok = require('ngrok');
 const app = express();
@@ -24,6 +25,7 @@ app.use(express.json());
 app.use('/api/genres', genres);
 app.use('/api/customers', customers);
 app.use('/api/clinicas', clinicas);
+app.use('/api/doctores', doctores);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

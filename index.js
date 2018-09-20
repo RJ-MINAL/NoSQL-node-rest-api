@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const clinicas = require('./routes/clinicas.route');
 const doctores = require('./routes/doctores.route');
+const pacientes = require('./routes/pacientes.route');
 const express = require('express');
 const app = express();
 
@@ -21,6 +22,7 @@ app.get('/', (req, res) => {
 app.use(express.json());
 app.use('/api/clinicas', clinicas);
 app.use('/api/doctores', doctores);
+app.use('/api/pacientes', pacientes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
